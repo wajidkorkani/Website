@@ -20,9 +20,28 @@
             margin-top: 20px;
             text-align: center;
         }
+
+        .error{
+            color: red;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .success{
+            color: green;
+            font-size: 30px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
+    {% if success %}
+    <p class="success"><b>{{ success }}</b></p>
+    {% endif %}
+
+    {% if error %}
+    <p class="error"><b>{{ error }}</b></p>
+    {% endif %}
     <h1>{{ data.name }}</h1>
     <br>
     <p>{{ data.about }}</p>
@@ -47,6 +66,13 @@
         {% endif %}
     {% endfor %}
     </ol>
-    
+    <br><hr><br>
+    <form action="/add-data" method="post">
+        <input type="text" name="name" placeholder="Enter your name">
+        <br><br>
+        <input type="number" name="age" placeholder="Enter your age">
+        <br><br>
+        <button>Submit</button>
+    </form>
 </body>
 </html>
