@@ -4,8 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
+    <style>
+        h1, h2{
+            background-color: brown;
+            color: white;
+            text-align: center;
+        }
+        p{
+            text-align: center;
+        }
+        li{
+            font-size: 30px;
+            color: white;
+            background-color: green;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>This is about page</h1>
+    <h1>{{ data.name }}</h1>
+    <br>
+    <p>{{ data.about }}</p>
+    <br><hr><br>
+    <h2>Age less than 18 </h2>
+    <ol>
+    {% for student in students %}
+        {% if student.age < 18 %}
+        <li>Name : {{student.name}} | Age : {{student.age}}</li>
+        {% endif %}
+    {% endfor %}
+    </ol>
+
+    <br>
+    <hr>
+    <br>
+    <h2>Age greater than 18 </h2>
+    <ol>
+    {% for student in students %}
+        {% if student.age > 18 %}
+        <li>Name : {{student.name}} | Age : {{student.age}}</li>
+        {% endif %}
+    {% endfor %}
+    </ol>
+    
 </body>
 </html>
