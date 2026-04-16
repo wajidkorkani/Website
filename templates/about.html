@@ -3,76 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-    <style>
-        h1, h2{
-            background-color: brown;
-            color: white;
-            text-align: center;
-        }
-        p{
-            text-align: center;
-        }
-        li{
-            font-size: 30px;
-            color: white;
-            background-color: green;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .error{
-            color: red;
-            font-size: 30px;
-            text-align: center;
-        }
-
-        .success{
-            color: green;
-            font-size: 30px;
-            text-align: center;
-        }
-    </style>
+    <title>Document</title>
 </head>
 <body>
-    {% if success %}
-    <p class="success"><b>{{ success }}</b></p>
-    {% endif %}
-
-    {% if error %}
-    <p class="error"><b>{{ error }}</b></p>
-    {% endif %}
-    <h1>{{ data.name }}</h1>
-    <br>
-    <p>{{ data.about }}</p>
-    <br><hr><br>
-    <h2>Age less than 18 </h2>
-    <ol>
-    {% for student in students %}
-        {% if student.age < 18 %}
-        <li>Name : {{student.name}} | Age : {{student.age}}</li>
-        {% endif %}
-    {% endfor %}
-    </ol>
-
-    <br>
-    <hr>
-    <br>
-    <h2>Age greater than 18 </h2>
-    <ol>
-    {% for student in students %}
-        {% if student.age > 18 %}
-        <li>Name : {{student.name}} | Age : {{student.age}}</li>
-        {% endif %}
-    {% endfor %}
-    </ol>
-    <br><hr><br>
-    <form action="/add-data" method="post">
-        <input type="text" name="name" placeholder="Enter your name">
-        <br><br>
-        <input type="number" name="age" placeholder="Enter your age">
-        <br><br>
-        <button>Submit</button>
-    </form>
+    
 </body>
 </html>
